@@ -1,0 +1,118 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"modules": [
+		{
+			"type": "title"
+		},
+		{
+			"type": "custom",
+			"format": "{#38;5;153}  System"
+		},
+		{
+			"type": "os",
+			"key": "{#38;5;153}├─ OS",
+			"format": "{#38;5;153}{name}"
+		},
+		{
+			"type": "kernel",
+			"key": "{#38;5;153}├─ Kernel",
+			"format": "{#38;5;153}{version}"
+		},
+		{
+			"type": "uptime",
+			"key": "{#38;5;153}├─ Uptime",
+			"format": "{#38;5;153}{days}d {hours}h {minutes}"
+		},
+		{
+			"type": "packages",
+			"key": "{#38;5;153}└─ Packages",
+			"format": "{#38;5;153}{total}"
+		},
+		{
+			"type": "break"
+		},
+		{
+			"type": "custom",
+			"format": "{#38;5;183}  Hardware"
+		},
+		{
+			"type": "host",
+			"key": "{#38;5;183}├─ Host",
+			"format": "{#38;5;183}{name}"
+		},
+		{
+			"type": "cpu",
+			"key": "{#38;5;183}├─ CPU",
+			"format": "{#38;5;183}{name}"
+		},
+		{
+			"type": "gpu",
+			"key": "{#38;5;183}├─ GPU",
+			"format": "{#38;5;183}{name}"
+		},
+		{
+			"type": "memory",
+			"key": "{#38;5;183}└─ Memory",
+			"format": "{#38;5;183}{used} / {total}"
+		},
+		{
+			"type": "break"
+		},
+		/*{
+			"type": "custom",
+			"format": "{#38;5;216}  Graphics"
+		},
+		{
+			"type": "display",
+			"key": "{#38;5;216}├─ Display",
+			"format": "{#38;5;216}{resolution}"
+		},
+		{
+			"type": "de",
+			"key": "{#38;5;216}├─ DE",
+			"format": "{#38;5;216}{name}",
+		},
+		{
+			"type": "wm",
+			"key": "{#38;5;216}├─ WM",
+			"format": "{#38;5;216}{name}",
+		},
+		{
+			"type": "wmtheme",
+			"key": "{#38;5;216}├─ WM Theme",
+			"format": "{#38;5;216}{name}",
+		},
+		{
+			"type": "theme",
+			"key": "{#38;5;216}├─ Theme",
+			"format": "{#38;5;216}{name}",
+		},
+		{
+			"type": "icons",
+			"key": "{#38;5;216}└─ Icons",
+			"format": "{#38;5;216}{name}",
+		},*/
+		{
+			"type": "break"
+		},
+		{
+			"type": "custom",
+			"format": "{#38;5;158}  Terminal"
+		},
+		/*{
+			"type": "shell",
+			"key": "{#38;5;158}├─ Shell",
+			"format": "{#38;5;158}{name}"
+		},
+		{
+			"type": "terminal",
+			"key": "{#38;5;158}├─ Terminal",
+			"format": "{#38;5;158}{name}"
+		},*/
+		{
+			"type": "terminalfont",
+			"key": "{#38;5;158}└─ Terminal Font",
+			"format": "{#38;5;158}{name}"
+		}
+	]
+}

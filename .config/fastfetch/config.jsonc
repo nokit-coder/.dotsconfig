@@ -6,22 +6,26 @@
 		},
 		{
 			"type": "custom",
-			"format": "{#38;5;153}  System"
+			"format": "  System",
+			"outputColor": "38;5;153"
 		},
 		{
 			"type": "os",
-			"key": "{#38;5;153}├─ OS",
-			"format": "{#38;5;153}{name}"
+			"key": "├─ OS",
+			"keyColor": "38;5;153",
+			"outputColor": "38;5;153"
 		},
 		{
 			"type": "kernel",
-			"key": "{#38;5;153}├─ Kernel",
-			"format": "{#38;5;153}{version}"
+			"key": "├─ Kernel",
+			"keyColor": "38;5;153",
+			"outputColor": "38;5;153"
 		},
 		{
 			"type": "uptime",
-			"key": "{#38;5;153}├─ Uptime",
-			"format": "{#38;5;153}{days}d {hours}h {minutes}"
+			"key": "├─ Uptime",
+			"keyColor": "38;5;153",
+			"outputColor": "38;5;153"
 		},
 		{
 			"type": "packages",
@@ -34,71 +38,90 @@
 		},
 		{
 			"type": "custom",
-			"format": "{#38;5;183}  Hardware"
+			"format": "  Hardware",
+			"outputColor": "38;5;183"
 		},
 		{
 			"type": "host",
-			"key": "{#38;5;183}├─ Host",
-			"format": "{#38;5;183}{name}"
+			"key": "├─ Host",
+			"keyColor": "38;5;183",
+			"outputColor": "38;5;183"
 		},
 		{
 			"type": "cpu",
-			"key": "{#38;5;183}├─ CPU",
-			"format": "{#38;5;183}{name}"
+			"key": "├─ CPU",
+			"keyColor": "38;5;183",
+			"outputColor": "38;5;183"
 		},
 		{
 			"type": "gpu",
-			"key": "{#38;5;183}├─ GPU",
-			"format": "{#38;5;183}{name}"
+			"key": "├─ GPU",
+			"keyColor": "38;5;183",
+			"outputColor": "38;5;183"
 		},
 		{
 			"type": "memory",
-			"key": "{#38;5;183}└─ Memory",
-			"format": "{#38;5;183}{used} / {total}"
+			"key": "├─ Memory",
+			"keyColor": "38;5;183",
+			"outputColor": "38;5;183"
+		},
+		{
+			"type": "disk",
+			"key": "└─ Disk",
+			"keyColor": "38;5;183",
+			"outputColor": "38;5;183"
 		},
 		{
 			"type": "break"
 		},
 		{
 			"type": "custom",
-			"format": "{#38;5;216}  Graphics"
+			"format": "  Graphics",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "display",
-			"key": "{#38;5;216}├─ Display",
-			"format": "{#38;5;216}{resolution}"
+			"key": "├─ Display",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "de",
-			"key": "{#38;5;216}├─ DE",
-			"format": "{#38;5;216}{name}",
+			"key": "├─ DE",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216",
 		},
 		{
 			"type": "wm",
-			"key": "{#38;5;216}├─ WM",
-			"format": "{#38;5;216}{name}",
+			"key": "├─ WM",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "wmtheme",
-			"key": "{#38;5;216}├─ WM Theme",
-			"format": "{#38;5;216}{name}",
+			"key": "├─ WM Theme",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "theme",
-			"key": "{#38;5;216}├─ Theme",
-			"format": "{#38;5;216}{name}",
+			"key": "├─ Theme",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "icons",
-			"key": "{#38;5;216}└─ Icons",
-			"format": "{#38;5;216}{name}",
+			"key": "└─ Icons",
+			"keyColor": "38;5;216",
+			"outputColor": "38;5;216"
 		},
 		{
 			"type": "break"
 		},
 		{
 			"type": "custom",
-			"format": "{#38;5;158}  Terminal"
+			"format": "  Terminal",
+			"outputColor": "38;5;158"
 		},
 		{
 			"type": "shell",
@@ -114,8 +137,9 @@
 		},
 		{
 			"type": "terminalfont",
-			"key": "{#38;5;158}└─ Terminal Font",
-			"format": "{#38;5;158}{name}"
+			"key": "└─ Terminal Font",
+			"keyColor": "38;5;158",
+			"outputColor": "38;5;158"
 		}
 	]
 }

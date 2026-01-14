@@ -13,6 +13,7 @@
     "modules-right": [
     "hyprland/language",
     "cpu",
+    "gpu",
     "memory",
     "temperature",
     "battery",
@@ -36,8 +37,7 @@
       },
       "sort-by-number": true,
       "persistent-workspaces": {
-        "*": 5, // 5 workspaces by default on every monitor
-        "HDMI-A-1": 2 // but only three on HDMI-A-1
+        "*": 9
       },
     },
     "clock": {

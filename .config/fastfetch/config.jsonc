@@ -25,8 +25,9 @@
 		},
 		{
 			"type": "packages",
-			"key": "{#38;5;153}└─ Packages",
-			"format": "{#38;5;153}{total}"
+			"keyColor": "38;5;153",
+			"key": "└─ Packages",
+			"outputColor": "38;5;153"
 		},
 		{
 			"type": "break"
@@ -58,7 +59,7 @@
 		{
 			"type": "break"
 		},
-		/*{
+		{
 			"type": "custom",
 			"format": "{#38;5;216}  Graphics"
 		},
@@ -91,7 +92,7 @@
 			"type": "icons",
 			"key": "{#38;5;216}└─ Icons",
 			"format": "{#38;5;216}{name}",
-		},*/
+		},
 		{
 			"type": "break"
 		},
@@ -99,16 +100,18 @@
 			"type": "custom",
 			"format": "{#38;5;158}  Terminal"
 		},
-		/*{
+		{
 			"type": "shell",
-			"key": "{#38;5;158}├─ Shell",
-			"format": "{#38;5;158}{name}"
+			"key": "├─ Shell",
+			"keyColor": "38;5;158",
+			"outputColor": "38;5;158"
 		},
 		{
 			"type": "terminal",
-			"key": "{#38;5;158}├─ Terminal",
-			"format": "{#38;5;158}{name}"
-		},*/
+			"key": "├─ Terminal",
+			"keyColor": "38;5;158",
+			"outputColor": "38;5;158"
+		},
 		{
 			"type": "terminalfont",
 			"key": "{#38;5;158}└─ Terminal Font",

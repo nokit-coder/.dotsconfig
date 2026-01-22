@@ -24,6 +24,8 @@ bindkey '^[[3;5~' kill-word
 # ========== ALIASES ==========
 
 alias -s py=python
+alias -s cpp=g++
+alias -s pdf=zathura
 
 # ========== AUTOCOMPLETION ==========
 
@@ -102,8 +104,8 @@ add-zsh-hook precmd prompt_generator
 
 # ========== PATH ==========
 
-fpath+=("$HOME/.zfunc")
-fpath+=("$HOME/.local/bin")
+export PATH=$PATH:$HOME/.zfunc
+export PATH=$PATH:$HOME/.local/bin/
 
 # ========== start ==========
 fastfetch

@@ -1,146 +1,231 @@
-@import "macchiato.css";
+@define-color base-bg @background;
+@define-color accent @foreground;
+
+@define-color background #2a3a31;
+@define-color foreground #B9F6CA;
+@define-color hover #d0f0d7;
+@define-color selected #dfff00;
+@define-color warning #e5c07b;
+@define-color critical #e06c75;
+@define-color border alpha(@accent, 0.7);
+@define-color accent #6bbf7a;
+@define-color base-bg #1e2a24;
+
+@define-color hover-bg alpha(@background, 0.7);
+@define-color warning #e5c07b;
+@define-color critical #e06c75;
+@define-color inactive #6a7a71;
 
 * {
-  font-family: "JetBrains Mono", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 18px;
+    border: none;
+    border-radius: 16px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 0;
 }
 
 window#waybar {
-  background-color: @base;
-  border-radius: 13px;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+    background: transparent;
+    margin-top: 10px;
 }
 
-button {
-  /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
-  /* Avoid rounded borders under each button name */
-  border: none;
-  border-radius: 0;
+window#waybar > * > * > * > * {
+    background-color: @background;
+    color: @foreground;
+    padding: 0 10px;
+
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    transition: background-color 0.3s ease;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-  background: inherit;
-  box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-  background-color: @surface2;
-}
-
-#workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: @rosewater;
-}
-
-#workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-  background-color: @rosewater;
-  color: @base;
-  box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
-
-#mode {
-  background-color: #64727d;
-  box-shadow: inset 0 -3px #ffffff;
-}
-
-#clock,
-#battery,
+/* --- General Module Styles --- */
 #cpu,
 #memory,
+#disk,
 #temperature,
+#custom-update,
+#tray,
+#bluetooth,
 #network,
-#pulseaudio {
-  padding: 0 10px;
-}
-
-#pulseaudio {
-  color: @maroon;
-}
-
-#network {
-  color: @yellow;
-}
-
-#temperature {
-  color: @sky;
-}
-
-#battery {
-  color: @green;
-}
-
+#pulseaudio,
+#battery,
+#taskbar,
+#language,
 #clock {
-  color: @flamingo;
+    /* background-color: @background;
+    color: @foreground;
+    padding: 0 10px;
+
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    transition: background-color 0.3s ease; */
+}
+
+#cpu,
+#memory,
+#disk,
+#temperature {
+    padding: 0 6px;
+}
+
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#custom-update:hover,
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#custom-omarchy:hover {
+    background-color: @hover-bg;
+}
+
+#hardware {
+    background-color: @background;
+    padding: 0 10px;
+    margin: 5px;
+}
+
+/* --- Specific Module Styles & Overrides --- */
+#window {
+    margin: 5px 0;
+    background: @background;
+    padding: 0 10px;
+    border-radius: 16px;
+    margin-left: 10px;
+    color: @foreground;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    padding: 0;
+    margin-left: 0;
 }
 
 #cpu {
-  color: @peach;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding-left: 10px;
 }
 
-#memory {
-  color: @green;
+#temperature {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding-right: 10px;
 }
 
-#window {
-  color: @text;
+#custom-update {
+    border-radius: 16px;
+    margin-left: 10px;
+    padding-right: 12px;
 }
 
-.modules-right,
-.modules-left,
-.modules-center {
-  background-color: @base;
-  border-radius: 15px;
-}
-.modules-right {
-  padding: 0 10px;
-}
-
-.modules-left {
-  padding: 0 20px;
+#tray-expander {
+  background-color: @background;
+  color: @foreground;
+  margin: 5px 0;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  padding-left: 10px;
 }
 
-.modules-center {
-  padding: 0 10px;
+#tray {
+    padding-left: 10px;
 }
+
+#custom-omarchy {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+#clock {
+    background-color: @accent;
+    color: @base-bg;
+    border-radius: 16px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+#clock:hover {
+    background-color: @background;
+    color: @foreground;
+}
+
+#workspaces {
+    background-color: @background;
+    color: @foreground;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+    border-radius: 16px;
+    padding: 0 3px;
+}
+
+#workspaces button {
+    color: @inactive;
+    background: transparent;
+    padding: 0 6px;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background-color: alpha(#B9F6CA, 0.1);
+}
+
+#workspaces button.active {
+    color: @accent;
+}
+
+/* --- Module States --- */
+#network.disconnected,
+#bluetooth.disabled,
+#pulseaudio.muted {
+    color: @critical;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+
 #battery.charging,
 #battery.plugged {
-  color: @sapphire;
+    color: @accent;
 }
 
 @keyframes blink {
-  to {
-    color: #000000;
-  }
+    to {
+        background-color: @critical;
+        color: @base-bg;
+    }
 }
 
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    background-color: @critical;
+    color: @base-bg;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-label:focus {
-  background-color: #000000;
+/* --- Tooltip --- */
+tooltip {
+    background-color: @background;
+    border: 2px solid @accent;
+    border-radius: 16px;
+    padding: 8px 12px;
 }
 
-#pulseaudio.muted {
-  color: @text;
+tooltip label {
+    color: @foreground;
 }

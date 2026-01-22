@@ -13,20 +13,20 @@
     "layer": "top",
     "margin-top": 0,
     "margin-bottom": 0,
-    "layer": "top",
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
 
     // Load Modules
-    "include": ["~/.config/waybar/modules.json"],
+    "include": ["~/.config/waybar/modules.jsonc"],
 
     // Modules Left
     "modules-left": [
+        "custom/appmenuicon",
         "custom/appmenu",
         "group/settings",
         "wlr/taskbar",
-        "group/quicklinks",
+        // "group/quicklinks",
         "hyprland/window",
         "custom/empty"
     ],
@@ -44,11 +44,11 @@
         "battery", 
         "network",
         "group/hardware",
-        "custom/cliphist",
+        // "custom/cliphist",
         "idle_inhibitor",
         "tray",
-        "custom/exit",
-        "custom/ml4w-welcome",
+        //"custom/exit",
+        "hyprland/language",
         "clock"
     ]
 }

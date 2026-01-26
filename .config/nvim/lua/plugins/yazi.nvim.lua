@@ -1,0 +1,1 @@
+return { 'mikavilpas/yazi.nvim', }

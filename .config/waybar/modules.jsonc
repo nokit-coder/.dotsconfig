@@ -176,7 +176,9 @@
             "transition-duration": 300,
             "children-class": "not-memory",
             "transition-left-to-right": false
-        },        
+        },
+        "format": " ",
+        "format-expanded": "",     
         "modules": [
             "custom/system",
             "disk",
@@ -222,10 +224,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon}  {time}",
+        "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
@@ -274,8 +276,8 @@
         "format": "{icon}",
         "tooltip": true,
         "format-icons":{
-            "activated": " ",
-            "deactivated": " "
+            "activated": "",
+            "deactivated": ""
         },
         "on-click-right": "hyprlock"        
     }

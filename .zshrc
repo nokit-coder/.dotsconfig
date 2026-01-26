@@ -21,8 +21,15 @@ bindkey '^[[1;5C' forward-word
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
-# ========== ALIASES ==========
+# ========== IMPORT ==========
+source ~/.zfunc/fzf.sh
 
+# ========== ALIASES ==========
+alias ls='lsd'
+alias la='lsd -l'
+alias tree='lsd --tree'
+
+# ========== EXT ALIASES ==========
 alias -s py=python
 alias -s cpp=g++
 alias -s pdf=zathura
@@ -46,7 +53,7 @@ CPATH=$'\e[38;5;180m'
 CBRNCH=$'\e[38;5;150m'
 CBRNCH_R=$'\e[38;5;203m'
 CBRNCH_D=$'\e[38;5;211m'
-CBRNCH_A=$'\e[38;5;114m'
+CBRNCH_A=$'\e[38;5;185m'
 CBRNCH_H=$'\e[38;5;208m'
 # hz
 CDIR=$'\e[38;5;150m'
@@ -71,7 +78,7 @@ __git_prompt() {
     local beh=$([ -n "$(echo "$gstatus" | head -n1 | grep "behind")" ] && echo true || echo false)
     local remote=$([ -n "$(echo "$gstatus" | head -n1 | grep "\.\.\.")" ] && echo true || echo false)
     local detached=$([ -n "$(echo "$gstatus" | head -n1 | grep "HEAD")" ] && echo true || echo false)
-    
+
     echo -n "%{"
     if $remote; then
         if $detached; then

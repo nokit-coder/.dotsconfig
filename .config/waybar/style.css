@@ -30,18 +30,7 @@ window#waybar {
     margin-top: 10px;
 }
 
-window#waybar > * > * > * > * {
-    background-color: @background;
-    color: @foreground;
-    padding: 0 10px;
-
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-    transition: background-color 0.3s ease;
-}
+#hardware:hover {}
 
 /* --- General Module Styles --- */
 #cpu,
@@ -56,8 +45,10 @@ window#waybar > * > * > * > * {
 #battery,
 #taskbar,
 #language,
+#hardware,
+#idle_inhibitor,
 #clock {
-    /* background-color: @background;
+    background-color: @background;
     color: @foreground;
     padding: 0 10px;
 
@@ -66,7 +57,24 @@ window#waybar > * > * > * > * {
     margin-top: 5px;
     margin-bottom: 5px;
 
-    transition: background-color 0.3s ease; */
+    transition: background-color 0.3s ease;
+}
+
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#custom-update:hover,
+#tray:hover,
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#taskbar:hover,
+#language:hover,
+#idle_inhibitor:hover,
+#clock:hover {
+    background-color: @accent;
 }
 
 #cpu,
@@ -76,22 +84,13 @@ window#waybar > * > * > * > * {
     padding: 0 6px;
 }
 
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
-#custom-update:hover,
-#bluetooth:hover,
-#network:hover,
-#pulseaudio:hover,
-#battery:hover,
-#custom-omarchy:hover {
-    background-color: @hover-bg;
-}
-
 #hardware {
     background-color: @background;
-    padding: 0 10px;
-    margin: 5px;
+}
+
+
+#idle_inhibitor {
+    padding-right: 13px;
 }
 
 /* --- Specific Module Styles & Overrides --- */

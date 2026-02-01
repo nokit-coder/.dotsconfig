@@ -1,0 +1,3 @@
+return {
+	"Weyaaron/nvim-training",
+}

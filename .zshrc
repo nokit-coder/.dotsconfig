@@ -21,13 +21,21 @@ bindkey '^[[1;5C' forward-word
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
-# ========== IMPORT ==========
+# ========== SETTINGS ==========
 source ~/.zfunc/fzf.sh
+export XDG_PICTURES_DIR='$HOME/Pictures/'
 
 # ========== ALIASES ==========
-alias ls='lsd'
-alias la='lsd -l'
+# ===== redefenition =====
+alias ls='lsd -l'
+alias la='lsd -laA'
 alias tree='lsd --tree'
+alias less='less -r'
+# ===== new =====
+alias fim='nvim $(fzf +x)'
+alias cl='clear'
+alias vi='nvim'
+alias tch='touch'
 
 # ========== EXT ALIASES ==========
 alias -s py=python
@@ -38,81 +46,81 @@ alias -s pdf=zathura
 
 
 
-# ========== PROMT ==========
-CFG=$'\e[38;5;189m'
-CBG=$'\e[48;5;235m'
-CFBG=$'\e[38;5;235m'
-CACCENT=$'\e[38;5;174m'
+# ========== PROMPT ==========
+cfg=$'\e[38;5;189m'
+cbg=$'\e[48;5;235m'
+cfbg=$'\e[38;5;235m'
+caccent=$'\e[38;5;174m'
 
 # -----modules-----
 # user
-CUSER=$'\e[38;5;152m'
+cuser=$'\e[38;5;152m'
 # path
-CPATH=$'\e[38;5;180m'
+cpath=$'\e[38;5;180m'
 # git
-CBRNCH=$'\e[38;5;150m'
-CBRNCH_R=$'\e[38;5;203m'
-CBRNCH_D=$'\e[38;5;211m'
-CBRNCH_A=$'\e[38;5;185m'
-CBRNCH_H=$'\e[38;5;208m'
+cbrnch=$'\e[38;5;150m'
+cbrnch_r=$'\e[38;5;203m'
+cbrnch_d=$'\e[38;5;211m'
+cbrnch_a=$'\e[38;5;185m'
+cbrnch_h=$'\e[38;5;208m'
 # hz
-CDIR=$'\e[38;5;150m'
+cdir=$'\e[38;5;150m'
 # separator
-CSEP=$'\e[1;38;5;146m'
+csep=$'\e[1;38;5;146m'
 
-CR=$'\e[0m'
+cr=$'\e[0m'
 
 __path_prompt() {
-    local dir=$(pwd)
-    dir=${dir/$HOME/'🏠︎ '}
-    echo -n "$dir "
+	local dir=${$(pwd)/$home/'🏠︎ '}
+	echo -n "$dir "
 }
 
 __git_prompt() {
-    local branch=$(git branch 2>/dev/null | grep "*" | awk '{print $2}')
-    local gstatus=$(git status -sb 2>/dev/null)
-    
-    [ -z "${branch}" ] && return
-    
-    local ahd=$([ -n "$(echo "$gstatus" | head -n1 | grep "ahead")" ] && echo true || echo false)
-    local beh=$([ -n "$(echo "$gstatus" | head -n1 | grep "behind")" ] && echo true || echo false)
-    local remote=$([ -n "$(echo "$gstatus" | head -n1 | grep "\.\.\.")" ] && echo true || echo false)
-    local detached=$([ -n "$(echo "$gstatus" | head -n1 | grep "HEAD")" ] && echo true || echo false)
+	local branch=$(git branch 2>/dev/null | grep "*" | awk '{print $2}')
+	local gstatus=$(git status -sb 2>/dev/null)
 
-    echo -n "%{"
-    if $remote; then
-        if $detached; then
-            echo -n "${CBRNCH_D}"
-        else
-            if $beh || $ahd; then
-                $ahd && echo -n "${CBRNCH_A}"
-                $beh && echo -n "${CBRNCH_H}"
-            else
-                echo -n "${CBRNCH}"
-            fi
-        fi
-    else
-        echo -n "${CBRNCH_R}"
-    fi
-    
-    echo -n "%} "
-    echo -n "%{${CBRNCH}%}${branch}"
-    echo -n " "
+	[ -z "${gstatus}" ] && return
+
+	local ahd=$([ -n "$(echo "$gstatus" | head -n1 | grep "ahead")" ] && echo true || echo false)
+	local beh=$([ -n "$(echo "$gstatus" | head -n1 | grep "behind")" ] && echo true || echo false)
+	local remote=$([ -n "$(echo "$gstatus" | head -n1 | grep "##")" ] && echo true || echo false)
+	local detached=$([ -n "$(echo "$gstatus" | head -n1 | grep "head")" ] && echo true || echo false)
+
+	echo -n "%{"
+	if $remote; then
+		if $detached; then
+			echo -n "${cbrnch_d}"
+		else
+			if $beh || $ahd; then
+				$ahd && echo -n "${cbrnch_a}"
+				$beh && echo -n "${cbrnch_h}"
+			else
+				echo -n "${cbrnch}"
+			fi
+		fi
+	else
+		echo -n "${cbrnch_r}"
+	fi
+
+	echo -n "%} "
+	echo -n "%{${cbrnch}%}${branch}"
+	echo -n " "
 }
 
-prompt_generator() {
-    local path_part=$(__path_prompt)
-    local git_part=$(__git_prompt)
-    
-    PS1="%{${CBG}${CFG}%} %{${CUSER}${CBG}%}%n%{${CSEP}%} ❯ %{${CPATH}%}${path_part}${git_part}%{${CR}${CFBG}%}%{${CR}%} "
+__prompt_generator() {
+	local path_part=$(__path_prompt)
+	local git_part=$(__git_prompt)
+
+	export PS1="%{${cbg}${cfg}%} %{${cuser}${cbg}%}%n%{${csep}%} ❯ %{${cpath}%}${path_part}${git_part}%{${cr}${cfbg}%}%{${cr}%} "
 }
 
-add-zsh-hook precmd prompt_generator
+add-zsh-hook precmd __prompt_generator
 
 # ========== PATH ==========
 
-export PATH=$PATH:$HOME/.zfunc
-export PATH=$PATH:$HOME/.local/bin/
+# export path='$path:$home/.zfunc'
+path+=('$home/.local/bin/')
+export path
 
-# ========== start ==========
+# ========== START ==========
 fastfetch

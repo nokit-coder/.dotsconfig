@@ -22,14 +22,14 @@ bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
 # ========== SETTINGS ==========
-source ~/.zfunc/fzf.sh
+source ~/.zfunc/*
 export XDG_PICTURES_DIR='$HOME/Pictures/'
 
 # ========== ALIASES ==========
 # ===== redefenition =====
-alias ls='lsd -l'
-alias la='lsd -laA'
-alias tree='lsd --tree'
+alias ls='lsd -lv --color=always'
+alias la='lsd -laAv --color=always'
+alias tree='lsd --tree --color=always'
 alias less='less -r'
 # ===== new =====
 alias fim='nvim $(fzf +x)'
@@ -38,9 +38,11 @@ alias vi='nvim'
 alias tch='touch'
 
 # ========== EXT ALIASES ==========
-alias -s py=python
-alias -s cpp=g++
-alias -s pdf=zathura
+alias -s 'py=python'
+alias -s 'cpp=g++'
+alias -s 'pdf=zathura'
+alias -s 'gz=tar -xf'
+alias -s 'sh=sh'
 
 # ========== AUTOCOMPLETION ==========
 

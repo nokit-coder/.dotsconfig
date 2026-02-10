@@ -139,7 +139,7 @@ alias -s 'jsonc=$EDITOR'
 # ========== PATH ==========
 
 # export path='$path:$home/.zfunc'
-path+=('$home/.local/bin/')
+path+=("$HOME/.local/bin/")
 export path
 
 # ========== START ==========

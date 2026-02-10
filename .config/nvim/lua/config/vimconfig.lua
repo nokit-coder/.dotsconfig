@@ -4,7 +4,7 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', ';', ':')
 
-vim.keymap.set({ 'i', 'v' }, 'jk', '<Esc>')
+vim.keymap.set({ 'i' }, 'jk', '<Esc>')
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

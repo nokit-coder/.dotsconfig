@@ -2,10 +2,10 @@
 	"layer": "top",
 	"position": "top",
 		// "width": 1280,
-		"modules-left": ["hyprland/workspaces", "bluetooth", "network", "hyprland/submap"],
+		"modules-left": ["hyprland/workspaces", "bluetooth", "network"],
 		"modules-center": ["custom/music"],
-		"modules-right": ["pulseaudio", "backlight", "battery", "clock", "group/system", "hyprland/language", "custom/lock", "custom/power"],
-		"hyprland/workspaces": {
+		"modules-right": ["pulseaudio", "backlight", "battery", "clock", "group/system", "tray", "hyprland/language", "custom/lock", "custom/power"],
+		"wlr/workspaces": {
 			"disable-scroll": true,
 			"sort-by-name": true,
 			"format": " {icon} ",
@@ -13,18 +13,9 @@
 				"default": "",
 			},
 		},
-
-		"hyprland/submap": {
-			"format": "<span size='11000' foreground='#F8B471'> </span>{}",
-			"max-length": 20,
-			"tooltip": false,
-			"on-click": "hyprctl dispatch submap reset",
-		},
-
 		"tray": {
 			"icon-size": 21,
-			"spacing": 10,
-			"expand": true
+			"spacing": 10
 		},
 
 		"custom/music": {

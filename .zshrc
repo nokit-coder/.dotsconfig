@@ -35,11 +35,11 @@ stty eof undef
 
 # ========== ALIASES ==========
 # ===== redefenition =====
-alias ls='lsd -lv --color=always'
+alias ls='lsd -lv --color=always --git --gitsort'
 alias lls='lsd -v --color=always'
-alias la='lsd -laAv --color=always'
+alias la='lsd -laAv --color=always --git --gitsort'
 alias lla='lsd -vaA --color=always'
-alias tree='lsd --tree --color=always'
+alias tree='lsd --tree --color=always --git --gitsort --ignore-glob=.git'
 alias less='less -r'
 alias cd='z'
 # ===== new =====

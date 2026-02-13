@@ -22,18 +22,15 @@
 
 #workspaces button {
   color: @lavender;
-  border-radius: 1rem;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
   color: @peach;
-  border-radius: 1rem;
 }
 
 #workspaces button:hover {
   color: @sapphire;
-  border-radius: 1rem;
 }
 
 #custom-music,
@@ -48,6 +45,7 @@
 #custom-network,
 #system,
 #custom-lock,
+#submap,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
@@ -138,6 +136,11 @@
 }
 
 /* ----- left modules ----- */
+/* submap */
+#submap {
+	border-radius: 1rem;
+	margin-left: 1rem;
+}
 /* bluetooth */
 #bluetooth {
 	border-radius: 1rem 0 0 1rem;
